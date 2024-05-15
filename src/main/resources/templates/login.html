@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<head>
+    <title>Login</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f4f4f9;
+            margin: 0;
+            padding: 20px;
+            display: flex;
+            flex-direction: column; /* Align items in a column */
+            align-items: center; /* Center items horizontally */
+            height: 100vh;
+            justify-content: center; /* Center the content vertically */
+        }
+
+        .login-container {
+            width: 100%;
+            max-width: 350px; /* Sets a max-width for the form container */
+        }
+
+        form {
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+            margin-top: 10px; /* Add some space between the title and the form */
+        }
+
+        h1 {
+            color: #333;
+            margin-bottom: 10px; /* Space below the header */
+        }
+
+        .error {
+            color: #D8000C;
+            background-color: #FFD2D2;
+            padding: 10px;
+            margin-bottom: 20px;
+            border-radius: 5px;
+            text-align: center;
+        }
+
+        label {
+            color: #666;
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        input[type="text"],
+        input[type="password"],
+        input[type="submit"] {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 10px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            box-sizing: border-box;
+        }
+
+        input[type="submit"] {
+            background-color: #5c67f2;
+            color: white;
+            font-size: 16px;
+            border: none;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #4a54e1;
+        }
+
+        .footer {
+            text-align: center;
+            margin-top: 20px; /* Space above the footer */
+        }
+
+        a {
+            color: #5c67f2;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        } </style>
+</head>
+<body>
+<h1>Login</h1>
+<p th:if="${param.error}" class="error">Wrong email or password</p>
+<form th:action="@{/login}" method="post">
+    <label for="email">Email</label>
+    <input type="text" id="email" name="username" autofocus="autofocus" /> <br />
+    <label for="password">Password</label>
+    <input type="password" id="password" name="password" /> <br />
+    <input type="submit" value="Log in" />
+</form>
+<p>Create an accounte </p> <br/>
+<a th:href="@{register}">Register</a>
+</body>
+</html>
+
+
