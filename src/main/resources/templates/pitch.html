@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout" 
+      layout:decorate="menu">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Fields</title>
+    <link rel="stylesheet" href="/webjars/bootstrap/5.3.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap">
+    <style>
+        body {
+            background-color: #fff;
+            font-family: 'Roboto', sans-serif;
+        }
+        .welcome-container {
+            text-align: center;
+            margin-top: 20px;
+        }
+        .welcome-container h1 {
+            display: inline;
+            color: #539A46;
+            font-weight: 700;
+            font-size: 36px;
+        }
+        .welcome-container a {
+            display: inline-block;
+            margin-left: 20px;
+            background-color: #539A46;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            font-size: 18px;
+            cursor: pointer;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: 400;
+        }
+        .welcome-container a:hover {
+            background-color: #417334;
+        }
+        .container {
+            width: 850px;
+            height: 550px;
+            margin: 50px auto;
+            background-color: #539A46;
+            position: relative;
+        }
+        .line {
+            width: 850px;
+            height: 550px;
+            border: 3px solid #ffffff;
+            position: absolute;
+            left: 0;
+            right: 0;
+            top: 0;
+            bottom: 0;
+        }
+        .line::before {
+            border: 5px solid #539A46;
+            bottom: -6px;
+            content: "";
+            left: -9px;
+            position: absolute;
+            right: -6px;
+            top: -9px;
+        }
+        .half {
+            width: 425px;
+            height: 550px;
+            position: absolute;
+            top: 0;
+            border-right: 4px solid #fff;
+            left: 0;
+            z-index: 200;
+        }
+        .panelty {
+            width: 110px;
+            height: 220px;
+            border: 3px solid #ffffff;
+            position: absolute;
+            z-index: 220;
+            background-color: #539A46;
+        }
+        .panelty.left {
+            left: 3px;
+            top: 150px;
+            border-left: none;
+        }
+        .panelty.left::after {
+            border: 3px solid #ffffff;
+            border-left: none;
+            bottom: 45px;
+            content: "";
+            left: 0;
+            position: absolute;
+            right: 55px;
+            top: 45px;
+        }
+        .panelty.right {
+            right: 0;
+            top: 150px;
+            border-right: none;
+        }
+        .panelty.right::after {
+            border: 3px solid #ffffff;
+            border-right: none;
+            bottom: 45px;
+            content: "";
+            left: 55px;
+            position: absolute;
+            right: 0;
+            top: 45px;
+        }
+        .p-spot.left::after {
+            content: "\2022";
+            position: absolute;
+            color: #fff;
+            font-size: 35px;
+            top: 238px;
+            left: 80px;
+            z-index: 300;
+        }
+        .p-spot.right::after {
+            content: "\2022";
+            position: absolute;
+            color: #fff;
+            font-size: 35px;
+            top: 238px;
+            right: 80px;
+            z-index: 300;
+        }
+        .center {
+            position: absolute;
+            width: 130px;
+            height: 130px;
+            border: 3px solid #ffffff;
+            left: 359px;
+            top: 193px;
+            border-radius: 50%;
+        }
+        .center::after {
+            background-color: #fff;
+            border: 5px solid #fff;
+            bottom: 55px;
+            content: "";
+            left: 55px;
+            position: absolute;
+            right: 55px;
+            top: 55px;
+            border-radius: 50%;
+        }
+        .p-place {
+            border-radius: 50%;
+            height: 130px;
+            position: absolute;
+            width: 150px;
+            z-index: 210;
+            border: 3px solid transparent;
+        }
+        .p-place.left {
+            border-bottom-color: #fff;
+            border-right-color: #fff;
+            border-top-color: #fff;
+            left: 0;
+            top: 193px;
+        }
+        .p-place.right {
+            border-bottom-color: #fff;
+            border-left-color: #fff;
+            border-top-color: #fff;
+            right: 0;
+            top: 193px;
+        }
+    </style>
+</head>
+<body>
+   
+    <div layout:fragment="content">
+        <div class="welcome-container">
+            <h1>Welcome To Fields</h1>
+            <a class="btn" th:href="@{/create}">Get Started</a>
+        </div>
+        <div class="container">
+            <div class="line"></div>
+            <div class="half"></div>
+            <div class="panelty left"></div>
+            <div class="panelty right"></div>
+            <div class="p-spot left">&nbsp;</div>
+            <div class="p-spot right">&nbsp;</div>
+            <div class="center"></div>
+            <div class="p-place left"></div>
+            <div class="p-place right"></div>
+        </div>
+    </div>
+</body>
+</html>

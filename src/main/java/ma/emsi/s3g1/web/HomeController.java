@@ -1,6 +1,7 @@
 package ma.emsi.s3g1.web;
 
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
@@ -19,5 +20,9 @@ public class HomeController {
     @RequestMapping(value = "/about",method = RequestMethod.GET)
     public String about(){
         return "about";
+    }
+    @GetMapping("/pitch")
+    public String pitch(){
+        return "pitch";
     }
 }

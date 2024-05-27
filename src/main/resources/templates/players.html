@@ -12,18 +12,18 @@
 </head>
 <body>
 <div layout:fragment="content">
-<div class="p-3">
-    <div class="card">
-        <div class="card-header">Players List</div>
-<form method="get", th:action="@{index}">
-    <input type="text" name="search" th:value="${searchName}">
-    <button class="btn btn-primary" type="submit">Search</button>
+    <div class="p-3">
+        <div class="card">
+            <div class="card-header">Players List</div>
+            <form method="get", th:action="@{index}">
+                <input type="text" name="search" th:value="${searchName}">
+                <button class="btn btn-primary" type="submit">Search</button>
 
-</form>
+            </form>
 
-        <div class="card-body">
-            <table class="table">
-                <thead>
+            <div class="card-body">
+                <table class="table">
+                    <thead>
                     <tr>
                         <td>Id</td>
                         <td>typeTerrain</td>
@@ -34,8 +34,8 @@
                         <td></td>
 
                     </tr>
-                </thead>
-                <tbody>
+                    </thead>
+                    <tbody>
                     <tr th:each="s:${pagePlayers}">
 
                         <td th:text="${s.id}"></td>
@@ -57,30 +57,30 @@
 
 
                     </tr>
-                </tbody>
+                    </tbody>
 
 
 
 
-            </table>
-<div class="container">
-            <ul class="nav nav-pills">
-                <li class="nav-item me-2"
-                    th:each="p:${tabPages}" >
-                    <a th:text="${p+1}"
-                       th:class="${p==currentPage? 'btn btn-primary' : 'btn btn-outline-primary'}"
-                    th:href="@{index(page=${p}, size=${size}, search=${searchName})}"></a>
-                </li>
+                </table>
+                <div class="container">
+                    <ul class="nav nav-pills">
+                        <li class="nav-item me-2"
+                            th:each="p:${tabPages}" >
+                            <a th:text="${p+1}"
+                               th:class="${p==currentPage? 'btn btn-primary' : 'btn btn-outline-primary'}"
+                               th:href="@{index(page=${p}, size=${size}, search=${searchName})}"></a>
+                        </li>
 
 
-            </ul>
+                    </ul>
 
-</div>
+                </div>
+            </div>
+
+
         </div>
-
-
     </div>
-</div>
 
 
 </div>
